@@ -3,6 +3,7 @@ from linear_model import *
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def index():
     # Render the main HTML template
