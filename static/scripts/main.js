@@ -34,7 +34,7 @@ async function calculateResults() {
         try {
             const selected_movies = selectedPosters.map(({ movieName }) => movieName);
 
-            const response = await fetch('/predict', {
+            const response = await fetch('https://oscars-best-picture-prediction-v2.onrender.com', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
