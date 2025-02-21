@@ -16,7 +16,7 @@ This project is a web application that predicts the winner of the Oscar Best Pic
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/oscar-best-picture-predictor.git
+   git clone https://github.com/marijaparezanin/Oscars_Best_Picture_Prediction_v2.git
    ```
 
 2. **Install Dependencies:**
