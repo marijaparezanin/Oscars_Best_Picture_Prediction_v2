@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oscars Best Picture Predictor</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/oscars_logo.jpg') }}" type="image/jpg">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+<body>
+    <main>
+        <video autoplay muted loop id="bgVideo">
+            <source src="{{ url_for('static', filename='images/oscars_backgroud_4.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <h1 class = "title">Oscars Best Picture Predictor</h1>
+        <h4 class = "homepage_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pick 3 films you would like to nominate for The Best Picture award. Afterwords click the button to see the predicted winner!
+            The winner is calculated on a multi-linear regression model that has been trained with the nominees and winners of the past 20 years in the category.
+            The model takes into account many factors such as: IMDB score, Genre, RottenTomatos score, Audience score, Golden globe wins, runtime etc.
+            <br>You can also select 3 films out of our 60+ film database from the past 2 decades and see which one would win against the chosen 
+            competitors.<h4 id="text_link" class = "homepage_text" style="cursor: pointer;"><b>Try this exciting feature here!</b></h4>
+
+        </h4>
+        <form action="/predict" method="post" onsubmit="return false">
+            <button class = "btn_calculate_2024" onclick="calculateResults()">Calculate Winner</button>
+
+            <div class="posters_2024" id="postersContainer"></div>        
+            
+            <br>
+        </form>
+
+        <div class="winner_popup" id = "winner_popup" {% if show_popup %}style="opacity: 1;"{% endif %}>
+            <div class="popup-content">
+                <h2>The Oscar for Best Picture goes to...</h2>
+                <p class="winner-text">{{ winner }}</p>
+                <img id = "winner_poster_image" src = "" alt = "Winner Image">
+            </div>
+        </div>
+    </main>
+
+
+    <p class = "homepage_text" id = "footer">Developed by Marija Parežanin (MaPa)<br>marija.parezanin@mensa.ba<br><a href = "https://github.com/marijaparezanin/Oscars_Best_Picture_Prediction" style="color:white; text-decoration: none;">https://github.com/marijaparezanin/Oscars_Best_Picture_Prediction</a><br>2023/2024 Created for the purpose of testing the use of Linear Regression models<br>Numericki algoritmi, SIIT, FTN, SV1/2022</p>
+    <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/loading_poster2024.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/loading_all.js') }}"></script>
+
+</body>
+</html>
