@@ -34,7 +34,7 @@ def predict():
 
 def run_prediction(selected_movies):
     print(f"Selected movies: {selected_movies}")
-    return predict_winner(selected_movies, "files/2024_candidates.csv")
+    return predict_winner(selected_movies, "files/2025_candidates.csv")
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 10000)) 
