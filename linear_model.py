@@ -79,7 +79,7 @@ def make_model(print_stats = False):
     global model
     global features
 
-    data = pd.read_csv('files\oscardata.csv')
+    data = pd.read_csv('files/oscardata.csv')
     features = data.drop(['Film', 'Year', 'won_best_picture'], axis=1)  
 
     labels = data['won_best_picture']
