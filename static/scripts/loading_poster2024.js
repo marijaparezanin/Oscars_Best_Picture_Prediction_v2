@@ -21,7 +21,7 @@ const parseCSV = (csv) => {
         var name = values[0].trim()
         var year = values[3].trim()
         movie["Title"] = name;
-        movie["Image"] = "/static/posters/"+name+".jpg"
+        movie["Image"] = "./static/posters/"+name+".jpg"
         movie["Alt"] = name + " ("  + year + ")";
     
         movies.push(movie);
