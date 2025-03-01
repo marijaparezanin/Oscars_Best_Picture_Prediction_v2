@@ -40,8 +40,8 @@ def predict_winner(selected_movies):
     global model
     list_results = []
     winning_score = -math.inf
-    test_data = pd.read_csv("static\\files\\2024_candidates.csv")
-    original_data = pd.read_csv("static\\files\\oscardata.csv")
+    test_data = pd.read_csv("static/files/2024_candidates.csv")
+    original_data = pd.read_csv("static/files/oscardata.csv")
     for film in selected_movies:
         single_film = test_data[test_data['Film'] == film]
 

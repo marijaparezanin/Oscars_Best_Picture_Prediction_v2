@@ -1,7 +1,7 @@
 
 // Example: Fetch data from CSV
 const fetchMovieData2 = async () => {
-    const response = await fetch('/static/files/oscardata.csv');
+    const response = await fetch("{{ url_for('static', filename='files/oscardata.csv') }}");
 
     const data = await response.text();
     return data;
@@ -21,7 +21,7 @@ const parseCSV2 = (csv) => {
         var name = values[0].trim()
         var year = values[3].trim()
         movie["Title"] = name;
-        movie["Image"] = "/static/posters/"+name+".jpg"
+        movie["Image"] = "{{ url_for('static', filename='posters/') }}" + name + ".jpg";
         movie["Alt"] = name + " ("  + year + ")";
     
         movies.push(movie);

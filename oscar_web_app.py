@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, url_for
 from linear_model import *
 import os
 
@@ -20,7 +20,7 @@ def predict():
     winner = run_prediction(selected_movies)
     print("WINNER: ", winner)
 
-    image_path = "../static/posters/"+winner+".jpg"
+    image_path = url_for('static', filename=f'posters/{winner}.jpg')
     return jsonify({"show_popup": True, "winner": winner, "image_path": image_path})
 
     #return jsonify({"message": winner})

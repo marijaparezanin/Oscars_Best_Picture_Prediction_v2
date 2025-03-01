@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oscars Best Picture Predictor</title>
     <link rel="icon" src="static/scripts/images/oscars_logo.jpg" type="image/jpg">
-    <link rel="stylesheet" src="static/scripts/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='scripts/style.css') }}">
 </head>
 <body>
     <main>
         <video autoplay muted loop id="bgVideo">
-            <source src="static/images/oscars_backgroud_4.mp4" type="video/mp4">
+            <source src="{{ url_for('static', filename='images/oscars_backgroud_4.mp4') }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
@@ -41,9 +41,8 @@
 
 
     <p class = "homepage_text" id = "footer">Developed by Marija Parežanin (MaPa)<br>marija.parezanin@mensa.ba<br><a href = "https://github.com/marijaparezanin/Oscars_Best_Picture_Prediction" style="color:white; text-decoration: none;">https://github.com/marijaparezanin/Oscars_Best_Picture_Prediction</a><br>2023/2024 Created for the purpose of testing the use of Linear Regression models<br>Numericki algoritmi, SIIT, FTN, SV1/2022</p>
-    <script src="static/scripts/main.js"></script>
-    <script src="static/scripts/loading_poster2024.js"></script>
-    <script src="static/scripts/loading_all.js'></script>
-
+    <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/loading_poster2024.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/loading_all.js') }}"></script>
 </body>
 </html>
