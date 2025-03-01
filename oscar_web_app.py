@@ -5,6 +5,7 @@ import os
 
 app = Flask(__name__)
 
+CORS(app, resources={r"/predict": {"origins": "https://marijaparezanin.github.io"}})
 
 @app.route('/')
 def index():
@@ -30,7 +31,6 @@ def run_prediction(selected_movies):
     return predict_winner(selected_movies)
 
 if __name__ == '__main__':
-    CORS(app)
     port = int(os.environ.get("PORT", 10000)) 
     app.run(host="0.0.0.0", port=port)
     #app.run(debug=True)
