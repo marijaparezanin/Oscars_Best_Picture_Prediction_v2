@@ -10,6 +10,8 @@ CORS(app, resources={r"/predict": {"origins": "https://marijaparezanin.github.io
 
 @app.before_request
 def before_request():
+    make_model()
+
     if request.method == 'OPTIONS':
         response = app.make_response('')
         response.headers['Access-Control-Allow-Origin'] = 'https://marijaparezanin.github.io'
@@ -33,6 +35,5 @@ def run_prediction(selected_movies):
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 10000)) 
-    make_model()
     app.run(host="0.0.0.0", port=port)
     #app.run(debug=True)

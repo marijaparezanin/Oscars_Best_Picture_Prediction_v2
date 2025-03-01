@@ -79,6 +79,9 @@ def make_model(print_stats = False):
     global model
     global features
 
+    if 'model' in globals():
+        return
+
     data = pd.read_csv('files/oscardata.csv')
     features = data.drop(['Film', 'Year', 'won_best_picture'], axis=1)  
 
