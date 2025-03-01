@@ -7,6 +7,11 @@ app = Flask(__name__)
 
 CORS(app, resources={r"/predict": {"origins": "https://marijaparezanin.github.io"}})
 
+@app.before_first_request
+def before_first_request():
+    print("Creating the model...")
+    make_model()
+
 
 @app.before_request
 def before_request():
@@ -16,11 +21,6 @@ def before_request():
         response.headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
         response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
         return response
-
-@app.route('/')
-def index():
-    make_model()
-    return "Model Created"
 
 @app.route('/predict', methods=['POST'])
 def predict():
