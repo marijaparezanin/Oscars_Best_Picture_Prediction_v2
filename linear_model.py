@@ -36,11 +36,11 @@ def transform_residuals(data_errors):
     data_errors['Guessed right'] = data_errors.apply(lambda row: transform_success(row['Succesful'], row['Actual']), axis=1)
     return data_errors
 
-def predict_winner(selected_movies):
+def predict_winner(selected_movies, test_base):
     global model
     list_results = []
     winning_score = -math.inf
-    test_data = pd.read_csv("files/2024_candidates.csv")
+    test_data = pd.read_csv(test_base)
     original_data = pd.read_csv("files/oscardata.csv")
     for film in selected_movies:
         single_film = test_data[test_data['Film'] == film]
