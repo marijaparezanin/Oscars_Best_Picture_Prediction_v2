@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from linear_model import *
+import os
 
 app = Flask(__name__)
 
@@ -28,4 +29,6 @@ def run_prediction(selected_movies):
     return predict_winner(selected_movies)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 10000)) 
+    app.run(host="0.0.0.0", port=port)
+    #app.run(debug=True)
