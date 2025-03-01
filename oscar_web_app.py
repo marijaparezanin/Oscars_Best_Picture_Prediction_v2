@@ -5,7 +5,7 @@ import os
 
 app = Flask(__name__)
 
-CORS(app, resources={r"/predict": {"origins": "https://marijaparezanin.github.io"}})
+CORS(app, resources={r"/predict": {"origins": ["https://marijaparezanin.github.io", "https://oscars-predict.xyz"]}})
 
 
 @app.before_request
@@ -14,7 +14,8 @@ def before_request():
 
     if request.method == 'OPTIONS':
         response = app.make_response('')
-        response.headers['Access-Control-Allow-Origin'] = 'https://marijaparezanin.github.io'
+        response.headers['Access-Control-Allow-Origin'] = 'https://oscars-predict.xyz'  # For production
+        response.headers['Access-Control-Allow-Origin'] = 'https://marijaparezanin.github.io'  # For testing
         response.headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS'
         response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
         return response
