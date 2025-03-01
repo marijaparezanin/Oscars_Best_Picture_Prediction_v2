@@ -52,7 +52,7 @@ async function calculateResults() {
                 document.querySelector('.winner_popup').style.opacity = '1';
 
                 const imageElement = document.getElementById("winner_poster_image")
-                imageElement.src = "./" + result.image_path;
+                imageElement.src = result.image_path;
 
 
                 // Display the winner in the popup
