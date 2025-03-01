@@ -1,7 +1,7 @@
 
 // Example: Fetch data from CSV
 const fetchMovieData = async () => {
-    const response = await fetch('static/files/2024_candidates.csv');
+    const response = await fetch('static/files/2025_candidates.csv');
 
     const data = await response.text();
     return data;

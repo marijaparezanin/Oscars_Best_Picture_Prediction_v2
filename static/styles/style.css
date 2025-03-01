@@ -98,7 +98,7 @@ body {
     text-align: justify;
 }
 
-.btn_calculate_2024{
+.btn_calculate{
     margin: 0 auto; /* This centers the button horizontally */
     display: block; /* Ensures the button takes up the full width available */
     text-align: center;
