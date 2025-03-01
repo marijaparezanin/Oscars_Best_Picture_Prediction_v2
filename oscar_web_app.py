@@ -7,11 +7,6 @@ app = Flask(__name__)
 
 CORS(app, resources={r"/predict": {"origins": "https://marijaparezanin.github.io"}})
 
-@app.before_first_request
-def before_first_request():
-    print("Creating the model...")
-    make_model()
-
 
 @app.before_request
 def before_request():
@@ -38,5 +33,6 @@ def run_prediction(selected_movies):
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 10000)) 
+    make_model()
     app.run(host="0.0.0.0", port=port)
     #app.run(debug=True)
