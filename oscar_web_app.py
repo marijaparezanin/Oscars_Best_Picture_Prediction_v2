@@ -10,7 +10,6 @@ CORS(app, resources={r"/predict": {"origins": "https://marijaparezanin.github.io
 
 @app.before_request
 def before_request():
-    # Manually handle preflight OPTIONS requests
     if request.method == 'OPTIONS':
         response = app.make_response('')
         response.headers['Access-Control-Allow-Origin'] = 'https://marijaparezanin.github.io'
@@ -20,8 +19,8 @@ def before_request():
 
 @app.route('/')
 def index():
-    # Render the main HTML template
     make_model()
+    return "Model Created"
 
 @app.route('/predict', methods=['POST'])
 def predict():
