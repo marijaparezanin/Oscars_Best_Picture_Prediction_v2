@@ -21,22 +21,18 @@ def before_request():
 @app.route('/')
 def index():
     # Render the main HTML template
-    return render_template('index.html')
+    make_model()
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    make_model()
     selected_movies = request.get_json().get('selected_movies', [])
     print(selected_movies)
-
 
     winner = run_prediction(selected_movies)
     print("WINNER: ", winner)
 
-    image_path = url_for('static', filename=f'posters/{winner}.jpg')
-    return jsonify({"show_popup": True, "winner": winner, "image_path": image_path})
+    return jsonify({"show_popup": True, "winner": winner})
 
-    #return jsonify({"message": winner})
 def run_prediction(selected_movies):
     print(f"Selected movies: {selected_movies}")
     return predict_winner(selected_movies)
