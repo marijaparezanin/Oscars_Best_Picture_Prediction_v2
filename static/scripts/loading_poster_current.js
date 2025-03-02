@@ -29,7 +29,6 @@ const parseCSV = (csv) => {
     return movies;
 };
 
-// Example: Populate posters
 const populatePosters = (movies) => {
     const postersContainer = document.getElementById('postersContainer');
 
@@ -57,7 +56,6 @@ const populatePosters = (movies) => {
     });
 };
 
-// Example: Load posters when the page is ready
 document.addEventListener('DOMContentLoaded', async () => {
     const csvData = await fetchMovieData();
     const movies = parseCSV(csvData);

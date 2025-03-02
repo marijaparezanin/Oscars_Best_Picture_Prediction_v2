@@ -1,5 +1,4 @@
 
-// Example: Fetch data from CSV
 const fetchMovieData2 = async () => {
     const response = await fetch('static/files/oscardata.csv');
 
@@ -7,7 +6,6 @@ const fetchMovieData2 = async () => {
     return data;
 };
 
-// Example: Parse CSV data
 const parseCSV2 = (csv) => {
     const rows = csv.split('\n');
     const movies = [];
@@ -29,7 +27,6 @@ const parseCSV2 = (csv) => {
     return movies;
 };
 
-// Example: Populate posters
 const populatePosters2 = (movies) => {
     const postersContainer = document.getElementById('postersContainer');
 
@@ -59,7 +56,6 @@ const populatePosters2 = (movies) => {
 
 
 let postersLoaded = false;
-// Example: Load posters when the page is ready
 document.addEventListener('DOMContentLoaded', async () => {
     const loadPostersText = document.getElementById('text_link');
     loadPostersText.addEventListener('click', async () => {
@@ -82,8 +78,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 const adjustPostersPosition = () => {
     const allposters = document.getElementById("postersContainer");
-    allposters.style.transform = "none"; // Remove transform, since centering is already fixed
+    allposters.style.transform = "none"; 
 
     const mainElement = document.querySelector("body");
-    mainElement.style.paddingBottom = "auto"; // Prevents unnecessary large space
+    mainElement.style.paddingBottom = "auto"; 
 };

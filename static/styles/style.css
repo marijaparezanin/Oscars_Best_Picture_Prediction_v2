@@ -15,13 +15,12 @@
     box-sizing: border-box;
 }
 
-/* Poster image styles */
 .poster_img {
     width: 190px;
     height: 280px;
     object-fit:cover;
-    margin: 0 auto; /* This centers the image horizontally within its container */
-    display: block; /* Ensures the image behaves as a block-level element */
+    margin: 0 auto; 
+    display: block; 
 }
 
 h1{
@@ -29,9 +28,8 @@ h1{
     margin-right: 22px !important;
 }
 
-/* Posters container styles */
 .posters_current {
-    width: 85%; /* Adjust the width */
+    width: 85%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -48,9 +46,9 @@ h1{
 }
 
 .poster-container {
-    width: 200px; /* Set a fixed width for each poster container */
-    margin: 20px; /* Adjust as needed for spacing between posters */
-    display: flex; /* Enable flexbox for centering the content */
+    width: 200px; 
+    margin: 20px; 
+    display: flex;
     justify-content: flex-start;
     box-sizing: border-box;
     position: relative;
@@ -59,15 +57,14 @@ h1{
 }
 
 .poster-container.selected {
-    border: 3px solid rgba(133, 220, 255, 0.7); /* Border effect when selected */
-    box-shadow: 0 0 15px rgba(133, 220, 255, 0.7); /* Add a glowing shadow for extra emphasis */
+    border: 3px solid rgba(133, 220, 255, 0.7); 
+    box-shadow: 0 0 15px rgba(133, 220, 255, 0.7); 
 }
 
 .selected .poster_img {
-    transform: scale(0.85); /* Keep poster slightly smaller when selected */
+    transform: scale(0.85);
 }
 
-/* Responsive for screens smaller than 1200px */
 @media screen and (max-width: 1200px) {
     .homepage_text{
         margin-left: 30px !important;
@@ -82,20 +79,19 @@ h1{
     }
 
     .posters_current {
-        min-width: 100%; /* Ensure full width */
+        min-width: 100%;
         display: flex;
         justify-content: flex-start;
-        align-items: center; /* Center content vertically */
-        flex-direction: column; /* Arrange posters in a column for narrow screens */
+        align-items: center; 
+        flex-direction: column; 
     }
 
     .poster-container {
-        width: 22%;  /* Use percentages for smaller screens */
-        margin: 10px;  /* Reduce margin on smaller screens */
+        width: 22%;  
+        margin: 10px; 
     }
 }
 
-/* For even smaller screens (e.g., mobile phones) */
 @media screen and (max-width: 768px) {
     .homepage_text{
         margin-left: 30px !important;
@@ -110,21 +106,20 @@ h1{
     }
 
     .posters_current {
-        min-width: 100%; /* Ensure full width */
+        min-width: 100%; 
         display: flex;
         justify-content: flex-start;
-        align-items: center; /* Center content vertically */
-        flex-direction: column; /* Arrange posters in a column for narrow screens */
-        padding: 10px;  /* Add padding for better spacing */
+        align-items: center; 
+        flex-direction: column; 
+        padding: 10px;  
     }
 
     .poster-container {
-        width: 45%;  /* Adjust the width further for mobile */
-        margin: 10px;  /* Reduce margin further */
+        width: 45%; 
+        margin: 10px; 
     }
 }
 
-/* For very small screens (e.g., very narrow phones) */
 @media screen and (max-width: 480px) {
     .homepage_text{
         margin-left: 30px !important;
@@ -139,20 +134,20 @@ h1{
     }
 
     .posters_current {
-        min-width: 100%; /* Ensure full width */
+        min-width: 100%; 
         display: flex;
         justify-content: flex-start;
-        align-items: center; /* Center content vertically */
-        flex-direction: column; /* Arrange posters in a column for narrow screens */
+        align-items: center; 
+        flex-direction: column; 
     }
 
     .poster-container {
-        width: 50%;  /* Make posters almost full width on very small screens */
-        margin: 19px;  /* Keep it compact */
+        width: 50%; 
+        margin: 19px; 
     }
 
     .poster_img {
-        margin: 0 auto; /* Center image horizontally on small screens */
+        margin: 0 auto; 
         object-fit:cover;
     }
 }

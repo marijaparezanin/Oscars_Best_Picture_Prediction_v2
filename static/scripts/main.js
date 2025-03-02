@@ -1,16 +1,25 @@
 var selectedPosters = [];
 
 
+document.addEventListener('DOMContentLoaded', async function () {
+    try {
+        await fetch('https://oscars-best-picture-prediction-v2.onrender.com/wake-up', {
+            method: 'GET',
+            mode: 'no-cors' // Prevents blocking due to CORS issues
+        });
+    } catch (error) {
+        console.error('Error waking up server:', error);
+    }
+});
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const popup = document.getElementById("winner_popup");
 
-    // Set the initial display property when the page loads
     popup.classList.add('hidden');
     
 
-    // Add a mousedown event listener to the document
     document.addEventListener('mousedown', function (event) {
-        
         popup.style.display = "none";
         popup.style.opacity = "1"; 
     
@@ -46,10 +55,8 @@ async function calculateResults() {
 
             if (response.ok) {
                 const result = await response.json();
-                // Handle the result as needed
                 console.log(result);
 
-                // Toggle the visibility of the winner popup
                 document.querySelector('.winner_popup').style.display = 'flex';
                 document.querySelector('.winner_popup').style.opacity = '1';
 
@@ -57,7 +64,6 @@ async function calculateResults() {
                 imageElement.src = "./static/posters/" + result.winner + ".jpg";
 
                 button.innerText = 'Calculate Winner';
-                // Display the winner in the popup
                 document.querySelector('.winner-text').innerText = result.winner;
             } else {
                 console.error('Server response not okay:', response.status, response.statusText);
