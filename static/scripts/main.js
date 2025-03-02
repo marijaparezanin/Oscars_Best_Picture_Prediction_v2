@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function handlePosterClick(poster, movieName) {
-    if (!poster.classList.contains('selected') && selectedPosters.length < 3) {
+    if (!poster.classList.contains('selected')) {
         poster.classList.add('selected');
         selectedPosters.push({ poster, movieName });
     } else if (poster.classList.contains('selected')) {
@@ -32,7 +32,7 @@ async function calculateResults() {
 
     const button = document.querySelector('.btn_calculate');
     button.innerText = 'Calculating...'; 
-    if (selectedPosters.length === 3) {
+    if (selectedPosters.length !== 0) {
         try {
             const selected_movies = selectedPosters.map(({ movieName }) => movieName);
 
