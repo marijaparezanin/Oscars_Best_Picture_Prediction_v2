@@ -76,5 +76,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         mainElement = document.querySelector('main');
         mainElement.style.paddingBottom = "6320px";
+
+        loadPostersText.classList.add("disabled");
+        console.log(loadPostersText.classList)
+        console.log(loadPostersText)
+
     });
 });

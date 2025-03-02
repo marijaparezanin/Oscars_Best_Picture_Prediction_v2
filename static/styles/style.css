@@ -104,14 +104,16 @@
 }
 
 
-
-
-
-
-
 @font-face {
     font-family: 'Poppins-ExtraLight';
     src: url('../fonts/Poppins-ExtraLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('../fonts/Poppins-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -153,23 +155,25 @@ body {
     color: white;
 }
 
+
+
 .homepage_text{
     color: white;
     margin-left: 50px;
     margin-right: 50px;
-    margin-bottom: 0px;
+    margin-bottom: 15px;
     text-align: justify;
 }
 
 .btn_calculate{
-    font-family: 'Poppins-ExtraLight';
+    font-family: 'Poppins-Regular';
     margin: 0 auto; /* This centers the button horizontally */
     display: block; /* Ensures the button takes up the full width available */
     text-align: center;
     font-size: 14px;
     color:whitesmoke;
-    background: rgba(133, 220, 255, 0.315);
-    border-color: whitesmoke;
+    border:3px solid rgba(133, 220, 255, 0.7);
+    background: transparent;
     padding:20px;
     padding-bottom: 15px;
     padding-top: 15px;
@@ -180,6 +184,27 @@ body {
     background-color: black;
 }
 
+.btn_show_more{
+    font-family: 'Poppins-ExtraLight';
+    margin: 0 auto; /* This centers the button horizontally */
+    display: block; /* Ensures the button takes up the full width available */
+    text-align: center;
+    font-size: 14px;
+    color:whitesmoke;
+    background: transparent;
+    border:3px solid rgba(133, 220, 255, 0.7);
+    padding:20px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+
+
+}
+
+.disabled{
+    background: black !important;
+    pointer-events: none !important;
+    display: none !important;
+}
 
 .winner_popup {
     opacity: 0;
