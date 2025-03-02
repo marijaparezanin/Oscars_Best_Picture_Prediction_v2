@@ -2,7 +2,7 @@
 .poster_img {
     width: 190px;
     height: 280px;
-    object-fit:fill;
+    object-fit:cover;
     margin: 0 auto; /* This centers the image horizontally within its container */
     display: block; /* Ensures the image behaves as a block-level element */
 }
@@ -29,8 +29,7 @@
     width: 200px; /* Set a fixed width for each poster container */
     margin: 20px; /* Adjust as needed for spacing between posters */
     display: flex; /* Enable flexbox for centering the content */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+    justify-content: flex-start;
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
@@ -38,7 +37,6 @@
 }
 
 .poster-container.selected {
-
     border: 3px solid rgba(133, 220, 255, 0.7); /* Border effect when selected */
     box-shadow: 0 0 15px rgba(133, 220, 255, 0.7); /* Add a glowing shadow for extra emphasis */
 }
@@ -56,7 +54,7 @@
     .posters_current {
         min-width: 100%; /* Ensure full width */
         display: flex;
-        justify-content: center; /* Center content horizontally */
+        justify-content: flex-start;
         align-items: center; /* Center content vertically */
         flex-direction: column; /* Arrange posters in a column for narrow screens */
     }
@@ -72,7 +70,7 @@
     .posters_current {
         min-width: 100%; /* Ensure full width */
         display: flex;
-        justify-content: center; /* Center content horizontally */
+        justify-content: flex-start;
         align-items: center; /* Center content vertically */
         flex-direction: column; /* Arrange posters in a column for narrow screens */
         padding: 10px;  /* Add padding for better spacing */
@@ -89,7 +87,7 @@
     .posters_current {
         min-width: 100%; /* Ensure full width */
         display: flex;
-        justify-content: center; /* Center content horizontally */
+        justify-content: flex-start;
         align-items: center; /* Center content vertically */
         flex-direction: column; /* Arrange posters in a column for narrow screens */
     }
@@ -101,6 +99,7 @@
 
     .poster_img {
         margin: 0 auto; /* Center image horizontally on small screens */
+        object-fit:cover;
     }
 }
 
@@ -135,7 +134,7 @@ body {
 }
 
 #text_link{
-    font-family: 'Poppins-Bold';
+    font-family: 'Poppins-ExtraLight';
 }
 
 #bgVideo {
@@ -163,6 +162,7 @@ body {
 }
 
 .btn_calculate{
+    font-family: 'Poppins-ExtraLight';
     margin: 0 auto; /* This centers the button horizontally */
     display: block; /* Ensures the button takes up the full width available */
     text-align: center;
@@ -174,6 +174,10 @@ body {
     padding-bottom: 15px;
     padding-top: 15px;
     
+}
+
+.btn_calculate:hover{
+    background-color: black;
 }
 
 

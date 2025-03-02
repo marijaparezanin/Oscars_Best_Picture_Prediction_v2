@@ -57,10 +57,16 @@ const populatePosters2 = (movies) => {
     });
 };
 
+
+let postersLoaded = false;
 // Example: Load posters when the page is ready
 document.addEventListener('DOMContentLoaded', async () => {
     const loadPostersText = document.getElementById('text_link');
     loadPostersText.addEventListener('click', async () => {
+        console.log(postersLoaded)
+        console.log("hello")
+        if (postersLoaded) return;
+        postersLoaded = true; 
         const csvData = await fetchMovieData2();
         const movies = parseCSV2(csvData);
         populatePosters2(movies);
