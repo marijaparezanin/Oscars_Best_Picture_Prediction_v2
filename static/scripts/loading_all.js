@@ -63,23 +63,24 @@ let postersLoaded = false;
 document.addEventListener('DOMContentLoaded', async () => {
     const loadPostersText = document.getElementById('text_link');
     loadPostersText.addEventListener('click', async () => {
-        console.log(postersLoaded)
-        console.log("hello")
         if (postersLoaded) return;
         postersLoaded = true; 
+        console.log("All posters loaded:", postersLoaded)
+
         const csvData = await fetchMovieData2();
         const movies = parseCSV2(csvData);
         populatePosters2(movies);
 
-        allposters = document.getElementById("postersContainer");
-        allposters.style.transform = "translate(-50%, -3.28%)";
-
-        mainElement = document.querySelector('main');
-        mainElement.style.paddingBottom = "6320px";
-
+        adjustPostersPosition();
+        
         loadPostersText.classList.add("disabled");
-        console.log(loadPostersText.classList)
-        console.log(loadPostersText)
-
     });
 });
+
+const adjustPostersPosition = () => {
+    const allposters = document.getElementById("postersContainer");
+    allposters.style.transform = "none"; // Remove transform, since centering is already fixed
+
+    const mainElement = document.querySelector("main");
+    mainElement.style.paddingBottom = "auto"; // Prevents unnecessary large space
+};

@@ -9,14 +9,14 @@
 
 /* Posters container styles */
 .posters_current {
-    min-width: 95%; /* Adjust the width */
+    width: 85%; /* Adjust the width */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    position: absolute;
-    top: calc(50% + 190px);
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    position: relative;
+    left: 0;
+    transform: none;
 }
 
 .poster_txt {
@@ -150,11 +150,11 @@ body {
 }
 
 .title {
+    margin-top: 10px;
     font-size: 56px;
     text-align: center;
     color: white;
 }
-
 
 
 .homepage_text{
