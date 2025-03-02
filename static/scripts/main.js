@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     try {
         await fetch('https://oscars-best-picture-prediction-v2.onrender.com/wake-up', {
             method: 'GET',
-            mode: 'no-cors' // Prevents blocking due to CORS issues
+            mode: 'no-cors' // prevents blocking due to CORS issues
         });
     } catch (error) {
         console.error('Error waking up server:', error);
