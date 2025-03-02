@@ -57,18 +57,33 @@ const populatePosters2 = (movies) => {
     });
 };
 
+
+let postersLoaded = false;
 // Example: Load posters when the page is ready
 document.addEventListener('DOMContentLoaded', async () => {
     const loadPostersText = document.getElementById('text_link');
     loadPostersText.addEventListener('click', async () => {
+        if (postersLoaded) return;
+        postersLoaded = true; 
+        console.log("All posters loaded:", postersLoaded)
+
         const csvData = await fetchMovieData2();
         const movies = parseCSV2(csvData);
         populatePosters2(movies);
 
-        allposters = document.getElementById("postersContainer");
-        allposters.style.transform = "translate(-50%, -3.28%)";
-
-        mainElement = document.querySelector('main');
-        mainElement.style.paddingBottom = "6320px";
+        loadPostersText.classList.add("disabled");
+        document.querySelectorAll('.btn_show_more').forEach(element => {
+            element.style.display = 'none';
+        });
+        adjustPostersPosition();
+        
     });
 });
+
+const adjustPostersPosition = () => {
+    const allposters = document.getElementById("postersContainer");
+    allposters.style.transform = "none"; // Remove transform, since centering is already fixed
+
+    const mainElement = document.querySelector("main");
+    mainElement.style.paddingBottom = "auto"; // Prevents unnecessary large space
+};

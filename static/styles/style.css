@@ -1,22 +1,22 @@
+/* Poster image styles */
 .poster_img {
-    width: 190px; 
-    height: 280px; 
-    object-fit: cover;
-    padding: 10px;
-    padding-bottom: 5px;
+    width: 190px;
+    height: 280px;
+    object-fit:cover;
+    margin: 0 auto; /* This centers the image horizontally within its container */
+    display: block; /* Ensures the image behaves as a block-level element */
 }
 
-/* Fix the class name here */
+/* Posters container styles */
 .posters_current {
-    min-width: 1200px; 
-
+    width: 85%; /* Adjust the width */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    position: absolute;
-    top: calc(50% + 190px);
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    position: relative;
+    left: 0;
+    transform: none;
 }
 
 .poster_txt {
@@ -28,26 +28,122 @@
 .poster-container {
     width: 200px; /* Set a fixed width for each poster container */
     margin: 20px; /* Adjust as needed for spacing between posters */
-    
+    display: flex; /* Enable flexbox for centering the content */
+    justify-content: flex-start;
+    box-sizing: border-box;
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+.poster-container.selected {
+    border: 3px solid rgba(133, 220, 255, 0.7); /* Border effect when selected */
+    box-shadow: 0 0 15px rgba(133, 220, 255, 0.7); /* Add a glowing shadow for extra emphasis */
+}
+
+/* Hover effect on poster */
 .poster-container:hover .poster_img {
-    transform: scale(0.8);
-    opacity: 0.7;
 }
 
-.selected {
-    transform: scale(0.9);
-    opacity: 0.7;
+.selected .poster_img {
+    transform: scale(0.85); /* Keep poster slightly smaller when selected */
 }
+
+/* Responsive for screens smaller than 1200px */
+@media screen and (max-width: 1200px) {
+    .homepage_text{
+        margin-left: 30px !important;
+        margin-right: 30px !important;
+    }
+
+    .title {
+        font-size: 28px !important;
+        margin-top: 30px !important;
+    }
+
+    .posters_current {
+        min-width: 100%; /* Ensure full width */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center; /* Center content vertically */
+        flex-direction: column; /* Arrange posters in a column for narrow screens */
+    }
+
+    .poster-container {
+        width: 22%;  /* Use percentages for smaller screens */
+        margin: 10px;  /* Reduce margin on smaller screens */
+    }
+}
+
+/* For even smaller screens (e.g., mobile phones) */
+@media screen and (max-width: 768px) {
+    .homepage_text{
+        margin-left: 30px !important;
+        margin-right: 30px !important;
+    }
+
+    .title {
+        font-size: 28px !important;
+        margin-top: 30px !important;
+    }
+
+    .posters_current {
+        min-width: 100%; /* Ensure full width */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center; /* Center content vertically */
+        flex-direction: column; /* Arrange posters in a column for narrow screens */
+        padding: 10px;  /* Add padding for better spacing */
+    }
+
+    .poster-container {
+        width: 45%;  /* Adjust the width further for mobile */
+        margin: 10px;  /* Reduce margin further */
+    }
+}
+
+/* For very small screens (e.g., very narrow phones) */
+@media screen and (max-width: 480px) {
+    .homepage_text{
+        margin-left: 30px !important;
+        margin-right: 30px !important;
+    }
+
+    .title {
+        font-size: 28px !important;
+        margin-top: 30px !important;
+    }
+
+    .posters_current {
+        min-width: 100%; /* Ensure full width */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center; /* Center content vertically */
+        flex-direction: column; /* Arrange posters in a column for narrow screens */
+    }
+
+    .poster-container {
+        width: 50%;  /* Make posters almost full width on very small screens */
+        margin: 19px;  /* Keep it compact */
+    }
+
+    .poster_img {
+        margin: 0 auto; /* Center image horizontally on small screens */
+        object-fit:cover;
+    }
+}
+
 
 @font-face {
     font-family: 'Poppins-ExtraLight';
     src: url('../fonts/Poppins-ExtraLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('../fonts/Poppins-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -70,14 +166,13 @@ body {
 }
 
 #text_link{
-    font-family: 'Poppins-Bold';
+    font-family: 'Poppins-ExtraLight';
 }
 
 #bgVideo {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     object-fit: cover;
@@ -85,33 +180,69 @@ body {
 }
 
 .title {
+    margin-top: 2%;
     font-size: 56px;
     text-align: center;
     color: white;
 }
 
+
 .homepage_text{
     color: white;
     margin-left: 50px;
     margin-right: 50px;
-    margin-bottom: 0px;
+    margin-bottom: 15px;
     text-align: justify;
 }
 
 .btn_calculate{
+    font-family: 'Poppins-Regular';
     margin: 0 auto; /* This centers the button horizontally */
     display: block; /* Ensures the button takes up the full width available */
     text-align: center;
     font-size: 14px;
     color:whitesmoke;
-    background: rgba(133, 220, 255, 0.315);
-    border-color: whitesmoke;
+    border:3px solid rgba(133, 220, 255, 0.7);
+    background: transparent;
     padding:20px;
     padding-bottom: 15px;
     padding-top: 15px;
-    
+    cursor: pointer;
 }
 
+.btn_calculate:hover{
+    background-color: rgba(133, 220, 255, 0.436) !important;
+}
+
+.btn_show_more{
+    font-family: 'Poppins-ExtraLight';
+    margin: 0 auto; /* This centers the button horizontally */
+    display: block; /* Ensures the button takes up the full width available */
+    text-align: center;
+    font-size: 14px;
+    color:whitesmoke;
+    background: transparent;
+    border:3px solid rgba(133, 220, 255, 0.7);
+    padding:20px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+
+
+}
+
+.disclaimer{
+    font-family: 'Poppins-ExtraLight' !important;
+    font-size: 14px !important;
+    text-align: left !important;
+}
+
+.btn_show_more:hover{
+    background-color: rgba(133, 220, 255, 0.436) !important;
+}
+
+.disabled{
+    display: none !important;
+}
 
 .winner_popup {
     opacity: 0;
@@ -160,7 +291,7 @@ main{
     padding-bottom: 500px;
 }
 
-#footer{
+.footer{
     text-align: center;
     bottom: 0; 
     padding-bottom: 20px;

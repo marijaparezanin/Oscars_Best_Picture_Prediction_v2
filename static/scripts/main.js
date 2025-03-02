@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function handlePosterClick(poster, movieName) {
-    if (!poster.classList.contains('selected') && selectedPosters.length < 3) {
+    if (!poster.classList.contains('selected')) {
         poster.classList.add('selected');
         selectedPosters.push({ poster, movieName });
     } else if (poster.classList.contains('selected')) {
@@ -30,7 +30,9 @@ function handlePosterClick(poster, movieName) {
 async function calculateResults() {
     console.log(selectedPosters);
 
-    if (selectedPosters.length === 3) {
+    const button = document.querySelector('.btn_calculate');
+    button.innerText = 'Calculating...'; 
+    if (selectedPosters.length !== 0) {
         try {
             const selected_movies = selectedPosters.map(({ movieName }) => movieName);
 
@@ -54,7 +56,7 @@ async function calculateResults() {
                 const imageElement = document.getElementById("winner_poster_image")
                 imageElement.src = "./static/posters/" + result.winner + ".jpg";
 
-
+                button.innerText = 'Calculate Winner';
                 // Display the winner in the popup
                 document.querySelector('.winner-text').innerText = result.winner;
             } else {

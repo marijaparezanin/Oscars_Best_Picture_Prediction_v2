@@ -8,20 +8,20 @@
     <link rel="stylesheet" href="./static/styles/style.css">
 </head>
 <body>
-    <main>
         <video autoplay muted loop id="bgVideo">
             <source src="static/images/oscars_backgroud_4.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
         <h1 class = "title">Oscars Best Picture Predictor</h1>
-        <h4 class = "homepage_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pick 3 films you would like to nominate for The Best Picture award. Afterwords click the button to see the predicted winner!
+        <h4 class = "homepage_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select films from the list, press calculate and find out who wins The Best Picture award!
             The winner is calculated on a multi-linear regression model that has been trained with the nominees and winners of the past 20 years in the category.
-            The model takes into account many factors such as: IMDB score, Genre, RottenTomatos score, Audience score, Golden globe wins, runtime etc.
-            <br>You can also select 3 films out of our 60+ film database from the past 2 decades and see which one would win against the chosen 
-            competitors.<h4 id="text_link" class = "homepage_text" style="cursor: pointer;"><b>Try this exciting feature here!</b></h4>
-
+            Explore our 60+ film database from the past 2 decades and see which one would win against the chosen 
+            competitors. Settle questions like: What would happen if The Gladiator would be nominated today? Find out with Show More!
+            <br><br><div class = "disclaimer">Disclaimer: Due to high trafic calculations might delay by up to 50s.</div>
         </h4>
+        
+
         <form method="post" onsubmit="return false;">
             <button class = "btn_calculate" onclick="calculateResults()">Calculate Winner</button>
 
@@ -29,6 +29,7 @@
             
             <br>
         </form>
+        <button class = "btn_show_more" id="text_link">Show more</button>
 
         <div class="winner_popup" id = "winner_popup" {% if show_popup %}style="opacity: 1;"{% endif %}>
             <div class="popup-content">
@@ -37,10 +38,9 @@
                 <img id = "winner_poster_image" src = "" alt = "Winner Image">
             </div>
         </div>
-    </main>
 
 
-    <p class = "homepage_text" id = "footer">Developed by Marija Parežanin (MaPa)<br>marija.parezanin@mensa.ba<br><a href = "https://github.com/marijaparezanin/Oscars_Best_Picture_Prediction_v2" style="color:white; text-decoration: none;">GitHub</a></p>
+    <p class = "footer homepage_text">Developed by Marija Parežanin (MaPa)<br>marija.parezanin@mensa.ba<br><a href = "https://github.com/marijaparezanin/Oscars_Best_Picture_Prediction_v2" style="color:white; text-decoration: none;">GitHub</a></p>
     <script src="./static/scripts/main.js"></script>
     <script src="./static/scripts/loading_poster_current.js"></script>
     <script src="./static/scripts/loading_all.js"></script>
