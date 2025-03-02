@@ -204,6 +204,8 @@ body {
 
 .title {
     margin-top: 2%;
+    margin-left: 22px !important;
+    margin-right: 22px !important;
     font-size: 56px;
     text-align: center;
     color: white;
