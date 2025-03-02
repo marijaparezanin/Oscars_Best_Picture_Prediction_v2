@@ -71,9 +71,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         const movies = parseCSV2(csvData);
         populatePosters2(movies);
 
+        loadPostersText.classList.add("disabled");
+        document.querySelectorAll('.btn_show_more').forEach(element => {
+            element.style.display = 'none';
+        });
         adjustPostersPosition();
         
-        loadPostersText.classList.add("disabled");
     });
 });
 
