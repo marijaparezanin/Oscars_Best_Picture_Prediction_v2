@@ -84,6 +84,6 @@ const adjustPostersPosition = () => {
     const allposters = document.getElementById("postersContainer");
     allposters.style.transform = "none"; // Remove transform, since centering is already fixed
 
-    const mainElement = document.querySelector("main");
+    const mainElement = document.querySelector("body");
     mainElement.style.paddingBottom = "auto"; // Prevents unnecessary large space
 };

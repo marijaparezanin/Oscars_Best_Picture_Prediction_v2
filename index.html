@@ -8,36 +8,36 @@
     <link rel="stylesheet" href="./static/styles/style.css">
 </head>
 <body>
-        <video autoplay muted loop id="bgVideo">
-            <source src="static/images/oscars_backgroud_4.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+    <video autoplay muted loop id="bgVideo">
+        <source src="static/images/oscars_backgroud_4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-        <h1 class = "title">Oscars Best Picture Predictor</h1>
-        <h4 class = "homepage_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select films from the list, press calculate and find out who wins The Best Picture award!
-            The winner is calculated on a multi-linear regression model that has been trained with the nominees and winners of the past 20 years in the category.
-            Explore our 60+ film database from the past 2 decades and see which one would win against the chosen 
-            competitors. Settle questions like: What would happen if The Gladiator would be nominated today? Find out with Show More!
-            <br><br><div class = "disclaimer">Disclaimer: Due to high trafic calculations might delay by up to 50s.</div>
-        </h4>
+    <h1 class = "title">Oscars Best Picture Predictor</h1>
+    <h4 class = "homepage_text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select films from the list, press calculate and find out who wins The Best Picture award!
+        The winner is calculated on a multi-linear regression model that has been trained with the nominees and winners of the past 20 years in the category.
+        Explore our 60+ film database from the past 2 decades and see which one would win against the chosen 
+        competitors. Settle questions like: What would happen if The Gladiator would be nominated today? Find out with Show More!
+        <br><br><div class = "disclaimer">Disclaimer: Due to high trafic calculations might delay by up to 30s.</div>
+    </h4>
+    
+
+    <form method="post" onsubmit="return false;">
+        <button class = "btn_calculate" onclick="calculateResults()">Calculate Winner</button>
+
+        <div class="posters_current" id="postersContainer"></div>        
         
+        <br>
+    </form>
+    <button class = "btn_show_more" id="text_link">Show more</button>
 
-        <form method="post" onsubmit="return false;">
-            <button class = "btn_calculate" onclick="calculateResults()">Calculate Winner</button>
-
-            <div class="posters_current" id="postersContainer"></div>        
-            
-            <br>
-        </form>
-        <button class = "btn_show_more" id="text_link">Show more</button>
-
-        <div class="winner_popup" id = "winner_popup" {% if show_popup %}style="opacity: 1;"{% endif %}>
-            <div class="popup-content">
-                <h2>The Oscar for Best Picture goes to...</h2>
-                <p class="winner-text">{{ winner }}</p>
-                <img id = "winner_poster_image" src = "" alt = "Winner Image">
-            </div>
+    <div class="winner_popup" id = "winner_popup" {% if show_popup %}style="opacity: 1;"{% endif %}>
+        <div class="popup-content">
+            <h2>The Oscar for Best Picture goes to...</h2>
+            <p class="winner-text">{{ winner }}</p>
+            <img id = "winner_poster_image" src = "" alt = "Winner Image">
         </div>
+    </div>
 
 
     <p class = "footer homepage_text">Developed by Marija Parežanin (MaPa)<br>marija.parezanin@mensa.ba<br><a href = "https://github.com/marijaparezanin/Oscars_Best_Picture_Prediction_v2" style="color:white; text-decoration: none;">GitHub</a></p>
