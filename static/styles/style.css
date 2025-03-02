@@ -1,3 +1,20 @@
+.posters_current {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+.posters_current > * {
+    max-width: 100%;
+    width: 100%;
+}
+.posters_current {
+    margin: 0 auto;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 /* Poster image styles */
 .poster_img {
     width: 190px;
