@@ -230,6 +230,12 @@ body {
 
 }
 
+.disclaimer{
+    font-family: 'Poppins-ExtraLight' !important;
+    font-size: 14px !important;
+    text-align: left !important;
+}
+
 .btn_show_more:hover{
     background-color: rgba(133, 220, 255, 0.436) !important;
 }
