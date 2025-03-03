@@ -18,10 +18,14 @@ const parseCSV2 = (csv) => {
         const movie = {};
         var name = values[0].trim()
         var year = values[3].trim()
+        var winner = values[4].trim()
+
         movie["Title"] = name;
         movie["Image"] = "./static/posters/"+name+".jpg"
         movie["Alt"] = name + " ("  + year + ")";
-    
+        if(winner == 1){
+            movie["Alt"] += "[Won]"
+        }
         movies.push(movie);
     }
     return movies;
