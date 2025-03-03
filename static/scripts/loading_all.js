@@ -23,8 +23,8 @@ const parseCSV2 = (csv) => {
         movie["Title"] = name;
         movie["Image"] = "./static/posters/"+name+".jpg"
         movie["Alt"] = name + " ("  + year + ")";
-        if(winner == 1){
-            movie["Alt"] += "[Won]"
+        if(winner == "1"){
+            movie["Alt"] += " [Won]"
         }
         movies.push(movie);
     }
