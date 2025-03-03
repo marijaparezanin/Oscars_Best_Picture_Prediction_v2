@@ -52,7 +52,8 @@ def predict_winner(selected_movies, test_base):
         single_film = np.column_stack([np.ones(len(single_film)), single_film])
 
         results = model.predict(single_film)
-        
+        print(film, results[0])
+
         if results[0] > winning_score:
             winning_score = results[0]
         list_results.append([film, results[0]])
