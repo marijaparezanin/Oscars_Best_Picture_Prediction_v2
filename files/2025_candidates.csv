@@ -1,7 +1,7 @@
 Film,rotten_tomatos_score,audience_score,Year,won_best_picture,metacritic_scores,Rating_IMDB,IMDB_votesK,golden_globes_awards,budget_mil,box_office_mil,Genre_action,Genre_biography,Genre_crime,Genre_comedy,Genre_drama,Genre_horror,Genre_fantasy,Genre_sci-fi,Genre_mystery,Genre_music,Genre_romance,Genre_history,Genre_war,Genre_thriller,Genre_adventure,Genre_family,Genre_sport,Genre_western,runtime
-Conclave,93,86,2024,0,79,7.4,80,1,20,82.4,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,120
-Wicked,88,95,2024,0,73,7.7,116,1,145,634.4,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,160
+Conclave,93,86,2024,0,79,7.4,80,1,20,82.4,0,0,0,0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,120
+Wicked,88,95,2024,0,73,7.7,116,1,145,634.4,0,0,0,0,1,0,1,0,0,1,0,0,0,0,0,0,0,0,160
 Emilia Perez,74,22,2024,0,71,6,46,4,21,5,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,130
 Dune 2,92,95,2024,0,79,8.5,589,0,190,714.4,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,166
-The Brutalist,93,81,2024,0,90,7.6,53,3,10,11,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,215
-Anora,93,89,2024,0,91,7.7,111,0,6,41,0,0,0,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,139
+The Brutalist,93,81,2024,0,90,7.6,53,3,12,42,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,220
+Anora,93,89,2024,0,80,7.7,111,0,6,41,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,132
