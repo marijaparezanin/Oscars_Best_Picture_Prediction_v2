@@ -2,13 +2,13 @@
 
 ## Overview
 
-This project is a web application that predicts the winner of the Oscar Best Picture award using linear regression. The prediction is based on features extracted from historical data of Oscar-nominated movies over the past 20 years. The web application is built using Flask, HTML, JavaScript, and CSS.
+This project is a web application that predicts the winner of the Oscar Best Picture award using linear regression. The prediction is based on features extracted from historical data of Oscar-nominated movies over the past 20 years. The web application is built using Flask, HTML, JavaScript, and CSS. The website can be visited [here](http://oscars-predict.xyz/)
 
 ## Features
 
 - **Prediction Model:** The core of the application is a linear regression model trained on historical data. The model considers various features of movies and predicts the likelihood of winning the Best Picture award.
 
-- **Web Interface:** The frontend provides a user-friendly interface where users can select three movies from the list of 2024 Oscar Best Picture candidates. You can also click the "Try new feature" text to reveal 60 more films that you can use as candidates. The selected movies are then sent to the backend for prediction.
+- **Web Interface:** The frontend provides a user-friendly interface where users can select three movies from the list of 2025 Oscar Best Picture candidates. You can also click the "Try new feature" text to reveal 60 more films that you can use as candidates. The selected movies are then sent to the backend for prediction.
 
 - **Model Evaluation:** The application evaluates the trained model by checking assumptions such as linearity, independence of errors, normality of errors, and equal variance.
 
